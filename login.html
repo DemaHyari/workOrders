@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <section class="login py-5">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-6 col-sm-12 caption">
+                    <h1>Company Logo</h1>
+                    <p>
+                        <span class="text-uppercase">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-12 p-4 mr-3 loginform">
+                    <h2 class="text-center">Welcome</h2>
+                    <p  class="text-center">Login to continue</p>
+                    <form name="login" onsubmit="return checkUser()">
+                        <div class="form-group">
+                            <div class="input-group input-group-lg mb-3">
+                                <!-- <box-icon name='user'></box-icon> -->
+                                <i class="far fa-user fa-lg inputIcon "></i>
+                                <input type="text" class="form-control my-2" name="username" id="username" placeholder="Username" aria-label="Email address"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg mb-3">
+                                <!-- <box-icon name='lock'></box-icon> -->
+                                <i class="fas fa-lock fa-lg inputIcon"></i>
+                                <input type="password" class="form-control my-2" name="password" id="password" placeholder="Password"
+                                    aria-label="password" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="form-group form-check d-flex justify-content-between mx-2">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary my-4 btn-lg loginbtn">login</button>
+                    </form>
+                    <div class="or">
+                        <h4>Or</h4>
+                    </div>
+                    <form action="usersPage.html">
+                        <button type="submit" class="btn my-4 btn-lg loginSSO"><span class="text-left"> <i class="fas fa-key"></i> </span> Login with SSO </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footerlogin text-center py-3">
+        <p class="m-0"> &copy; <span> Company Name</span> 2020. All Rights Reserved</p>
+    </footer>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="JS/loginJs.js"></script>
+</body>
+</html>

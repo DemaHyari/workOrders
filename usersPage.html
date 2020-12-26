@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Work Orders</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <button id="sidebarCollapse" type="button" class="btn btnToggle pt-3"> 
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#"><span>Company</span> Logo</a>
+        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="notifi">5</span>
+                        <i class="fas fa-bell"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="notifi">5</span>
+                        <i class="fas fa-inbox"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown pl-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="Image/UserImage.png" alt="">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Username</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="verticalNav" id="sidebar">
+        <ul class="nav flex-column mb-0 ">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-tachometer-alt fa-lg"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-clipboard-list fa-lg"></i>
+                    Work Orders
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog fa-lg"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="pageContent bg-light pt-3" id="content">
+        <div class="record m-3">
+            <h4 class="p-3">Records</h4>
+            <div class="search d-flex flex-row justify-content-between p-4">
+                <div class="addUser">
+                    <button class="btn" type="submit" id="addUser">Add User</button>
+                </div>
+                <div id="windowCreate" class="window">
+                    <div class="content">
+                        <span class="close" id="close"> &times; </span>
+                        <h3>Create Folder</h3>
+                        <form>
+                            <input type="number" class="form-control my-3" name="id" id="id" placeholder="ID">
+                            <input type="text" class="form-control my-3" name="un" id="un" placeholder="Username">
+                            <input type="password" class="form-control my-3" name="pw" id="pw" placeholder="Password">
+                            <input type="number" class="form-control my-3" name="no" id="no" placeholder="Phone Number">
+                            <input type="text" class="form-control my-3" name="fn" id="fn" placeholder="Full Name">
+                            <div class="btns">
+                                <button class="btn btn-primary ml-2" type="submit" id="">Create</button>
+                                <button class="btn cancel ml-2" type="submit">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="d-flex justify-content-end">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                    </div>
+                </form>
+            </div>
+            <div class="table-responsive">
+            <table class="table table-striped" >
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="user" >
+                    
+                </tbody>
+            </table>
+            </div>
+            <div class="navTabel d-flex flex-row justify-content-between px-5 py-4">
+                <div class="show">
+                    <span>Showing</span>
+                    <div class="dropdownPage d-inline-block p-2 text-center">
+                        <span class="pr-1">5</span> <i class="fas fa-chevron-down pl-1"></i>
+                    </div>
+                    <span>Of 5</span>
+                </div>
+                <div class="pageNo">
+                    <span><i class="fas fa-angle-left fa-lg"></i></span>
+                        <ul class="list-unstyled d-inline-block py-2 px-3">
+                            <li class="d-inline-block active">1</li>
+                            <li class="d-inline-block">2</li>
+                            <li class="d-inline-block">3</li>
+                            <li class="d-inline-block">4</li>
+                            <li class="d-inline-block">5</li>
+                        </ul>
+                    <span><i class="fas fa-angle-right fa-lg"></i></span>
+                </div>
+            </div>
+        </div>
+        <footer class="footer pt-3 px-3 d-flex justify-content-between">
+            <p class="m-0"> &copy; <span> Company Name</span> 2020. All Rights Reserved</p>
+            <div class="SocialIcons">
+                <ul class="list-unstyled">
+                    <li class="ml-1"><i class="fab fa-linkedin-in"></i></li>
+                    <li class="ml-1"><i class="fab fa-facebook-f"></i></li>
+                    <li class="ml-1"><i class="fas fa-link"></i></li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+        integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+        crossorigin="anonymous"></script> 
+    <script src="server.js"></script>
+    -->
+    <script src="JS/mainJs.js"></script>
+</body>
+</html>
